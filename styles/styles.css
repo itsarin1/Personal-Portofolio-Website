@@ -1,0 +1,555 @@
+/* warna */
+:root {
+  --lavender-floral: #BC87F5;
+  --mauve: #D0B3F9;
+  --lavender-web: #E4DEFC;
+  --seasalt: #FAFAFA;
+  --mint-green: #C2E4D9;
+  --text-dark: #2D1B69;
+  --text-light: #6B46C1;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: var(--seasalt);
+}
+
+/* Navigation */
+.nav-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(250, 250, 250, 0.95);
+  border-bottom: 1px solid var(--lavender-web);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--lavender-floral);
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--lavender-floral);
+  background-color: var(--lavender-web);
+  transform: translateY(-2px);
+}
+
+/* Tombol hamburger - hidden di desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 1100;
+}
+
+.hamburger-bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--lavender-floral);
+  border-radius: 2px;
+  transition: all 0.3s linear;
+}
+
+/* Hero Section */
+.hero-section {
+  padding-top: 70px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--seasalt), var(--lavender-web));
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--lavender-floral), var(--mauve));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  max-width: 420px;
+  animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--lavender-floral), var(--mauve));
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(188, 135, 245, 0.3);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(188, 135, 245, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-light);
+  padding: 1rem 2rem;
+  border: 2px solid var(--lavender-floral);
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--lavender-floral);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* bagian about */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, var(--lavender-floral), var(--mauve));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-photo img{
+  background: linear-gradient(135deg, var(--mauve), var(--mint-green));
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: 485px;
+  height: 630px;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: white;
+  box-shadow: 0 10px 25px rgba(188, 135, 245, 0.2);
+  transition: transform 0.3s;
+}
+
+.about-photo:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.about-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+/* Bagian skill */
+.skills-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-category {
+  background: white;
+  box-shadow: 0 8px 25px rgba(188, 135, 245, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  flex: 1 1 250px;
+  transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-10px);
+}
+
+.skill-category h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+/* Bagian pengalaman */
+.experience-section .timeline-item {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(188, 135, 245, 0.1);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.experience-section .timeline-item:hover {
+  transform: translateX(10px);
+}
+
+.experience-section time {
+  color: var(--lavender-floral);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.experience-section h3 {
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Bagian Proyek */
+.projects-subtitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.projects-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-card {
+  flex: 1 1 280px;
+  max-width: 320px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(188, 135, 245, 0.1);
+  padding: 1.5rem;
+  cursor: default;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.project-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 15px rgba(188, 135, 245, 0.15);
+}
+
+.project-card h3 {
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+.project-card p {
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+/* bagian kontak */
+.contact-intro {
+  color: var(--text-light);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contact-list {
+  list-style-type: none;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.contact-list li {
+  margin-bottom: 1rem;
+}
+
+.contact-list strong {
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.contact-link {
+  color: var(--lavender-floral);
+  text-decoration: none;
+  font-style: normal;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+  color: var(--mauve);
+}
+
+.contact-section p {
+  max-width: 600px;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+address p {
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(188, 135, 245, 0.1);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--lavender-web);
+  border-radius: 10px;
+  font-family: inherit;
+  margin-bottom: 1.2rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--lavender-floral);
+  box-shadow: 0 0 0 3px rgba(188, 135, 245, 0.2);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  width: 100%;
+  background: var(--lavender-floral);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+  background: var(--mauve);
+  transform: translateY(-3px);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--text-dark);
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* animasi */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* design yang responsif */
+@media (max-width: 1024px) {
+  /* seduh responsive container */
+  .hero-container, .about-grid, .projects-grid, .skills-grid {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hamburger muncul, menu disembunyikan */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    height: calc(100vh - 60px);
+    width: 250px;
+    background-color: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1050;
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  .nav-menu li {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem;
+    width: 100%;
+  }
+
+  /* Container nav di mobile lebih padding */
+  .nav-container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-photo, .project-card, .skill-category {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .about-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .project-card,
+  .skill-category {
+    margin: 0 0.5rem;
+  }
+}
